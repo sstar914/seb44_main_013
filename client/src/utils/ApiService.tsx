@@ -9,8 +9,8 @@ const USER_NAME = "USER_NAME";
 
 axios.defaults.baseURL = API_BASE_URL;
 
-export async function call(api: string, method: string, data?: string) {
-  let headers = new AxiosHeaders({
+export async function call(api: string, method: string, data?: any) {
+  const headers = new AxiosHeaders({
     "Content-Type": "application/json"
   });
 
@@ -19,7 +19,7 @@ export async function call(api: string, method: string, data?: string) {
     headers.append("Authorization", "Bearer " + accessToken);
   }
 
-  let options: RawAxiosRequestConfig = {
+  const options: RawAxiosRequestConfig = {
     headers: headers,
     method: method,
     url: API_BASE_URL + api,
@@ -31,6 +31,10 @@ export async function call(api: string, method: string, data?: string) {
   return await axios.request(options)
     .then((res) => res.data)
     .catch(error => {
-      console.log(error);
+      if(error.isAxiosError){
+        console.log(error.response);
+      } else {
+        console.log(error);
+      }
     })
 }
