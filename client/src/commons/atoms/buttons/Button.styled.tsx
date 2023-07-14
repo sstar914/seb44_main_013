@@ -67,8 +67,6 @@ export const DeleteCancelButton = styled(Purpletype)`
   border: 1px solid #8580E1;
 
   &:hover{
-    ${tw`
-      bg-gray-200
-    `}
+    background-color: #eeeeff;
   }
 `;
