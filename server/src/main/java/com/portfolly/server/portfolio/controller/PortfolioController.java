@@ -45,15 +45,15 @@ public class PortfolioController {
     //포트폴리오 등록
     @PostMapping
     public ResponseEntity postPortfolio(
-            @RequestHeader("AccessToken") String accessToken,
+            // @RequestHeader("AccessToken") String accessToken,
                                         @Valid @RequestBody PortfolioDto.Post postDto){
         //authentication or token통해서 memberId 받아와야함
 //        Long memberId = findmemberId(token);
         Long memberId = 1L;
 
-        String base64EncodedSecretKey = jwtTokenizer.encodeBase64SecretKey(jwtTokenizer.getSecretKey());
-        String email = jwtTokenizer.extractEmailFromToken(accessToken,base64EncodedSecretKey);
-        Member member = memberService.findByMember(email);
+        // String base64EncodedSecretKey = jwtTokenizer.encodeBase64SecretKey(jwtTokenizer.getSecretKey());
+        // String email = jwtTokenizer.extractEmailFromToken(accessToken,base64EncodedSecretKey);
+        // Member member = memberService.findByMember(email);
 
         Portfolio portfolio = portfolioService.postPortfolio(postDto, memberId);
         URI location = UriCreator.createUri(PORTFOLIO_DEFAULT_URL, portfolio.getId());
