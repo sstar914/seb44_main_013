@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class PictureConfig {
+
    @Value("${cloud.aws.credentials.access-key}")
    private String accessKey;
 
@@ -27,4 +28,5 @@ public class PictureConfig {
                .withCredentials(new AWSStaticCredentialsProvider(awsCreds))
                .build();
    }
+
 }

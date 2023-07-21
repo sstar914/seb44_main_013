@@ -27,4 +27,5 @@ public class PictureController {
        pictureService.deleteImage(fileName);
        return new ResponseEntity<>(HttpStatus.OK);
    }
+
 }

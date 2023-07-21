@@ -48,6 +48,7 @@ public class PortfolioController {
         Portfolio portfolio = portfolioService.postPortfolio(postDto, accessToken);
         //포트폴리오 이미지 등록
         portfolioService.addPicture(portfolio);
+
         URI location = UriCreator.createUri(PORTFOLIO_DEFAULT_URL, portfolio.getId());
         return ResponseEntity.created(location).build();
     }
