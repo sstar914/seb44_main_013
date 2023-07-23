@@ -41,7 +41,7 @@ public class Board extends Auditable {
     @Enumerated(value = EnumType.STRING)
     private Status status = Status.POST_ACTIVE;
 
-
+    @JsonBackReference
     @ManyToOne
     @JsonBackReference
     @JoinColumn(name = "member_id")

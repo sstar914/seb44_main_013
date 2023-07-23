@@ -16,8 +16,13 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
+<<<<<<< HEAD
+    date = "2023-07-21T23:56:43+0900",
+    comments = "version: 1.5.3.Final, compiler: javac, environment: Java 11.0.19 (Amazon.com Inc.)"
+=======
     date = "2023-07-22T22:29:34+0900",
     comments = "version: 1.5.3.Final, compiler: javac, environment: Java 11.0.18 (Azul Systems, Inc.)"
+>>>>>>> 01d0a42c105b2c6c1176255d4c95ecf95d51ae6b
 )
 @Component
 public class PortfolioMapperImpl implements PortfolioMapper {
