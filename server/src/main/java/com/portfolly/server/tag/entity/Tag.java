@@ -1,5 +1,6 @@
-package com.portfolly.server.tag.entity;
+package com.portfolly.server.category.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.portfolly.server.portfolio.entity.Portfolio;
 import com.portfolly.server.portfolio.entity.PortfolioTag;
 import lombok.AllArgsConstructor;
@@ -13,17 +14,15 @@ import java.util.List;
 
 @Entity
 @Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class Tag {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-//    @ManyToOne
-//    @JoinColumn(name = "category_id")
-//    private Category category;
+    @JsonBackReference
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 
 //    @OneToMany(mappedBy = "portfolioTag")
 //    private List<PortfolioTag> portfolioTags = new ArrayList<>();
