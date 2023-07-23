@@ -71,8 +71,8 @@ public class PortfolioDto {
         private String firstImage;
         private MemberDto.Response member;
         private List<TagDto.Response> portfolioTags;
-    }
 
+    }
     @Getter
     @Setter
     @NoArgsConstructor
